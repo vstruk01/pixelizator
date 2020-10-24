@@ -2,6 +2,7 @@ package world.ucode.Servlets;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +12,8 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 
 
+
+@WebServlet("/")
 public class Servlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -38,11 +41,6 @@ public class Servlet extends HttpServlet {
                 resp.setContentType("image");
                 is = sc.getResourceAsStream("s.png");
                 break;
-            }
-            case "/Servlet": {
-                System.out.println("Hello World");
-                PrintWriter pw = resp.getWriter();
-                pw.println("Hello World");
             }
             default:
                 throw new IllegalStateException("Unexpected value: " + req.getServletPath());
