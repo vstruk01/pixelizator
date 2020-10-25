@@ -9,15 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.PrintWriter;
-
 
 
 @WebServlet("/")
 public class Servlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println(req.getServletPath());
+        System.out.println("method get -> " + req.getServletPath());
 
         OutputStream os = resp.getOutputStream();
         ServletContext sc = getServletContext();
@@ -52,11 +50,10 @@ public class Servlet extends HttpServlet {
         while ((readBuf = is.read(buffer)) != -1 ) {
             os.write(buffer, 0, readBuf);
         }
-//        PrintWriter printWriter = resp.getWriter();
-//        printWriter.println("<link rel='stylesheet' type='text/css' href='styles.css'>");
-//        printWriter.println("./style.css");
-//        printWriter.println("./s.png");
-//        resp.setStatus(200);
-//        super.doGet(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("method post");
     }
 }

@@ -12,6 +12,16 @@
         <button id="but">Lean</button>
         <div id="showOk"></div>
         <img style="display: none;" id="im" src="#" alt="hello">
+<%--        <form target="_self" action="Serv" method="post" enctype="multipart/form-data">--%>
+<%--            Select image to upload:--%>
+<%--            <input type="file" name="fileToUpload" id="fileToUpload">--%>
+<%--            <input type="submit" value="Upload Image" name="submit">--%>
+<%--        </form>--%>
+        <form id="myForm">
+            <input type="file" name="fileToUpload" id="fileToUpload">
+        </form>
+        <button id="sub">submit</button>
+<%--        <input type="submit" value="Upload Image" name="submit" id="sub">--%>
         <script src="script.js" ></script>
     </body>
 </html>
