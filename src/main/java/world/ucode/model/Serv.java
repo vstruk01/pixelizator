@@ -1,14 +1,13 @@
 package world.ucode.model;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletInputStream;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Part;
@@ -45,8 +44,7 @@ public class Serv  extends HttpServlet {
         File uploadDir = new File(uploadPath);
         ServletFileUpload upload;
         resp.setStatus(200);
-        resp.setContentType("text/html;charset=UTF-8");
-        resp.getWriter().write("Nice");
+//        resp.setContentType("text/html;charset=UTF-8");
 
         if (!uploadDir.exists())
             uploadDir.mkdir();
@@ -77,18 +75,30 @@ public class Serv  extends HttpServlet {
             }
             if (formItems != null && formItems.size() > 0) {
                 for (FileItem item : formItems) {
-	            if (!item.isFormField()) {
-	                String fileName = new File(item.getName()).getName();
-	                String filePath = uploadPath + File.separator + fileName;
-                        File storeFile = new File(filePath);
-                    try {
-                        item.write(storeFile);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    req.setAttribute("message", "File "
-                          + fileName + " has uploaded successfully!");
-	            }
+	                if (!item.isFormField()) {
+	                    String fileName = new File(item.getName()).getName();
+	                    String filePath = uploadPath + File.separator + fileName;
+	                    File storeFile = new File(filePath);
+
+                        try {
+                            OutputStream os = resp.getOutputStream();
+                            byte[] buffer = new byte[1024];
+                            int readBuf = 0;
+                            InputStream is = item.getInputStream();
+
+                            resp.setContentType("image");
+
+                            while ((readBuf = is.read(buffer)) != -1 ) {
+                                os.write(buffer, 0, readBuf);
+                            }
+
+                            item.write(storeFile);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+//                        req.setAttribute("message", "File "
+//                              + fileName + " has uploaded successfully!");
+	                }
                 }
             }
         }

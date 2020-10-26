@@ -1,15 +1,56 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
 #master {
-    transform: translateY(40vh);
     text-align: center;
     width: 100%;
-    height: 20vh;
-    line-height: 20vh;
+    height: 15vh;
+    line-height: 15vh;
     background-color: #dadada;
     font-size: 4vh;
     font-weight: 100;
 }
 
-#im {
-    width: 100px;
-    height: 100px;
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+#forInput,
+#forOutput {
+    display: none;
+}
+
+.contentImg {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 70vh;
+    border: black solid 2px ;
+}
+
+.im {
+    margin: 5%;
+    max-height: 60vh;
+    max-width: 40%;
+}
+
+.underButton {
+    display: inline-block;
+    width: 50%;
+    height: 5vh;
+    line-height: 2vh;
+    background: antiquewhite;
+    border: none;
+}
+
+#fileToUpload {
+    border-right: black solid 1px;
+    padding-bottom: 1.5vh;
+    padding-top: 1.5vh;
+    padding-left: 20%;
 }

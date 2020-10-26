@@ -25,13 +25,18 @@ public class Servlet extends HttpServlet {
 
         resp.setStatus(200);
         switch (req.getServletPath()) {
+            case "/scriptButton.js": {
+                resp.setContentType("script");
+                is = sc.getResourceAsStream("scriptButton.js");
+                break;
+            }
             case "/script.js": {
                 resp.setContentType("script");
                 is = sc.getResourceAsStream("script.js");
                 break;
             }
             case "/style.css": {
-                resp.setContentType("style");
+                resp.setContentType("stylesheet");
                 is = sc.getResourceAsStream("style.css");
                 break;
             }
