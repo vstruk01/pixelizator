@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
         <meta name="description" content="VV_Teaching">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="style.css">
         <link rel="icon" type="image/x-icon" href="s.png">
     </head>
@@ -15,7 +16,7 @@
         </div>
         <script src="script.js"></script>
         <div id="buttons">
-            <input type="file" class="underButton" id="fileToUpload" onchange="readURL(this)">
+            <input type="file" name="file" class="underButton" id="fileToUpload" onchange="readURL(this)">
             <button class="underButton" id="pixelizate"> pixelizate</button>
         </div>
         <script src="scriptButton.js"></script>

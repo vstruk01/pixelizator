@@ -45,6 +45,11 @@ public class Servlet extends HttpServlet {
                 is = sc.getResourceAsStream("s.png");
                 break;
             }
+            case "/elli.png": {
+                resp.setContentType("image");
+                is = sc.getResourceAsStream("elli.png");
+                break;
+            }
             default:
                 throw new IllegalStateException("Unexpected value: " + req.getServletPath());
         }
