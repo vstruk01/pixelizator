@@ -6,9 +6,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 
 @WebServlet("/")
@@ -48,6 +48,14 @@ public class Servlet extends HttpServlet {
             case "/elli.png": {
                 resp.setContentType("image");
                 is = sc.getResourceAsStream("elli.png");
+                File reqImage = new File("sendImage");
+                FileOutputStream fri = new FileOutputStream(reqImage);
+                while ((readBuf = is.read(buffer)) != -1 ) {
+//                    System.out.println(new String(Base64.getEncoder().encode(buffer), StandardCharsets.UTF_8));
+                    fri.write((new String(Base64.getEncoder().encode(buffer), StandardCharsets.UTF_8)/* + "\n"*/).getBytes());
+                    os.write(buffer, 0, readBuf);
+                }
+                is = null;
                 break;
             }
             default:
@@ -58,6 +66,7 @@ public class Servlet extends HttpServlet {
             return;
         }
         while ((readBuf = is.read(buffer)) != -1 ) {
+//            System.out.println(new String(Base64.getEncoder().encode(buffer), StandardCharsets.UTF_8));
             os.write(buffer, 0, readBuf);
         }
     }

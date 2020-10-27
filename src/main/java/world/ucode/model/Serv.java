@@ -32,13 +32,13 @@ public class Serv  extends HttpServlet {
         resp.getWriter().write("Hello my friend");
     }
 
-    private String getFileName(Part part) {
-        for (String content : part.getHeader("content-disposition").split(";")) {
-            if (content.trim().startsWith("filename"))
-                return content.substring(content.indexOf("=") + 2, content.length() - 1);
-            }
-        return "def";
-    }
+//    private String getFileName(Part part) {
+//        for (String content : part.getHeader("content-disposition").split(";")) {
+//            if (content.trim().startsWith("filename"))
+//                return content.substring(content.indexOf("=") + 2, content.length() - 1);
+//            }
+//        return "def";
+//    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -53,26 +53,30 @@ public class Serv  extends HttpServlet {
 
         InputStream is = filePart.getInputStream();
         resp.setStatus(202);
-        resp.setContentType("text");
+        resp.setContentType("image");
 
-//        OutputStream os = resp.getOutputStream();
+        OutputStream os = resp.getOutputStream();
         byte[] buffer = new byte[1024];
         int readBuf = 0;
-        File f = new File("src/main/webapp/elli.png");
-        FileOutputStream fos = new FileOutputStream(f);
-//        StringBuilder s = new StringBuilder();
-        String s = "";
+//        File f = new File("src/main/webapp/elli.png");
+//        FileOutputStream fos = new FileOutputStream(f);
+//        File reqImage = new File("reqImage");
+//        FileOutputStream fri = new FileOutputStream(reqImage);
+//        String s = "";
+//        int len = 0;
 
 
         while ((readBuf = is.read(buffer)) != -1 ) {
-            s += (new String(Base64.getEncoder().encode(buffer), StandardCharsets.US_ASCII));
-            System.out.println(new String(Base64.getEncoder().encode(buffer), StandardCharsets.US_ASCII));
-            System.out.println(readBuf);
-            fos.write(buffer, 0, readBuf);
-//            os.write(buffer, 0, readBuf);
+//            fri.write((new String(Base64.getEncoder().encode(buffer), StandardCharsets.UTF_8)/* + "\n"*/).getBytes());
+//            len += readBuf;
+//            System.out.println(readBuf);
+//            fos.write(Base64.getDecoder().decode(new String(Base64.getEncoder().encode(buffer), StandardCharsets.UTF_8)), 0, readBuf);
+            os.write(buffer, 0, readBuf);
         }
+//        fos.write(sb.toString().getBytes(), 0, len);
+//        os.write(sb.toString().getBytes(), 0, len);
 //        resp.getWriter().write("elli.png");
-        resp.getWriter().println(s);
+//        resp.getWriter().println(s);
         System.out.println("Ok");
 
 //        String uploadPath = getServletContext().getRealPath("") + File.separator + "newFile";
