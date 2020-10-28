@@ -16,9 +16,19 @@
         </div>
         <script src="script.js"></script>
         <div id="buttons">
-            <input type="file" name="file" class="underButton" id="fileToUpload" onchange="readURL(this)">
+            <input type="file" accept="image/*" name="file" class="underButton" id="fileToUpload" onchange="readURL(this)">
+            <p id="outNumber">10</p>
+            <label for="inputNumber"></label>
+            <input type="range" class="choiceNumber" id="inputNumber" min="1" max="100"  value="10">
             <button class="underButton" id="pixelizate"> pixelizate</button>
         </div>
+        <p id="name"></p>
+        <p id="size"></p>
+        <br>
+        <a href="#" id="download1" download="image.png">png</a>
+        <a href="#" id="download2" download="image.jpeg">jpeg</a>
+        <a href="#" id="download3" download="image.webp">webp</a>
+
         <script src="scriptButton.js"></script>
     </body>
 </html>

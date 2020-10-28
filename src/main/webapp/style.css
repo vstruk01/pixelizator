@@ -39,12 +39,31 @@
     max-width: 40%;
 }
 
+.choiceNumber {
+    display: inline-block;
+    width: 30%;
+    height: 5vh;
+    line-height: 2vh;
+    font-size: 3vh;
+    border: none;
+}
+
 .underButton {
     display: inline-block;
-    width: 50%;
+    width: 32%;
     height: 5vh;
     line-height: 2vh;
     background: antiquewhite;
+    border: none;
+}
+
+#outNumber {
+    display: inline-block;
+    width: 6%;
+    height: 5vh;
+    line-height: 5vh;
+    text-align: center;
+    background: aqua;
     border: none;
 }
 
@@ -52,5 +71,5 @@
     border-right: black solid 1px;
     padding-bottom: 1.5vh;
     padding-top: 1.5vh;
-    padding-left: 20%;
+    padding-left: 10%;
 }

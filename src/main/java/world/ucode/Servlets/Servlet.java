@@ -21,8 +21,6 @@ public class Servlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("method get -> " + req.getServletPath());
-
         OutputStream os = resp.getOutputStream();
         ServletContext sc = getServletContext();
         byte[] buffer = new byte[1024];
@@ -51,18 +49,6 @@ public class Servlet extends HttpServlet {
                 is = sc.getResourceAsStream("s.png");
                 break;
             }
-            case "/elli.png": {
-                resp.setContentType("image");
-                is = sc.getResourceAsStream("elli.png");
-                File reqImage = new File("sendImage");
-                FileOutputStream fri = new FileOutputStream(reqImage);
-                while ((readBuf = is.read(buffer)) != -1 ) {
-                    fri.write((new String(Base64.getEncoder().encode(buffer), StandardCharsets.UTF_8)/* + "\n"*/).getBytes());
-                    os.write(buffer, 0, readBuf);
-                }
-                is = null;
-                break;
-            }
             default:
                 throw new IllegalStateException("Unexpected value: " + req.getServletPath());
         }
@@ -71,13 +57,7 @@ public class Servlet extends HttpServlet {
             return;
         }
         while ((readBuf = is.read(buffer)) != -1 ) {
-//            System.out.println(new String(Base64.getEncoder().encode(buffer), StandardCharsets.UTF_8));
             os.write(buffer, 0, readBuf);
         }
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("method post");
     }
 }
