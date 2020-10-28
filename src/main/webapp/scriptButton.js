@@ -11,28 +11,21 @@ document.getElementById("pixelizate").addEventListener('click', async function (
             enctype: "multipart/form-data",
         });
         if (response.ok) {
-            // let text = await response.text();
-            let blob = await response.arrayBuffer();
-            let len = blob.byteLength;
+            let blob = await response.blob();
             let img = document.getElementById("forOutput");
             let img2 = document.getElementById("forInput");
-            // img.src = 'data:image/png;base64,' + text;
-            console.log(len);
-            // img.src = 'data:image/png;base64,'
-            let stringForSrc = 'data:image/png;base64,';
-            for (let i = 0; i < len; i += 100000) {
-                if (i + 100000 < len) {
-                    console.log('if' + i);
-                    stringForSrc = stringForSrc + btoa(String.fromCharCode.apply(null, new Uint8Array(blob.slice(i, i + 100000))));
-                } else {
-                    console.log('else' + i);
-                    stringForSrc = stringForSrc + btoa(String.fromCharCode.apply(null, new Uint8Array(blob.slice(i, len))));
-                }
-            }
-            // img.src = text;
-            img.src = stringForSrc;
+            let reader = new FileReader();
+            reader.onload = function(event){
+                img.src =   event.target.result
+            };
+            reader.readAsDataURL(blob);
+
             console.log(img.src.length);
             console.log(img2.src.length);
+            if (img.src === img2.src) {
+                console.log("yes")
+            }
+            console.log(img.src);
             img.style.display = 'block'
         } else {
             console.log("error post method");

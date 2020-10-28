@@ -1,5 +1,6 @@
 package world.ucode.Servlets;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +14,11 @@ import java.util.Base64;
 
 @WebServlet("/")
 public class Servlet extends HttpServlet {
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("method get -> " + req.getServletPath());
@@ -51,7 +57,6 @@ public class Servlet extends HttpServlet {
                 File reqImage = new File("sendImage");
                 FileOutputStream fri = new FileOutputStream(reqImage);
                 while ((readBuf = is.read(buffer)) != -1 ) {
-//                    System.out.println(new String(Base64.getEncoder().encode(buffer), StandardCharsets.UTF_8));
                     fri.write((new String(Base64.getEncoder().encode(buffer), StandardCharsets.UTF_8)/* + "\n"*/).getBytes());
                     os.write(buffer, 0, readBuf);
                 }

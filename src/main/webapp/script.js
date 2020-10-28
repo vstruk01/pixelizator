@@ -8,5 +8,6 @@ function readURL(input) {
             img.style.display = 'block'
         };
         reader.readAsDataURL(input.files[0]);
+        console.log(input.files[0]);
     }
 }
