@@ -22,9 +22,9 @@
             <input type="range" class="choiceNumber" id="inputNumber" min="1" max="100"  value="10">
             <button class="underButton" id="pixelizate"> pixelizate</button>
         </div>
-        <p id="name"></p>
-        <p id="size"></p>
-        <br>
+        <p class="info" id="name"></p>
+        <p class="info" id="format"></p>
+        <p class="info" id="size"></p>
         <a href="#" id="download1" download="image.png">png</a>
         <a href="#" id="download2" download="image.jpeg">jpeg</a>
         <a href="#" id="download3" download="image.webp">webp</a>

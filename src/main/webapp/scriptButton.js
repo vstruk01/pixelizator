@@ -23,7 +23,6 @@ document.getElementById("pixelizate").addEventListener('click', async function (
                 document.getElementById("download1").href = event.target.result;
                 document.getElementById("download2").href = event.target.result;
                 document.getElementById("download3").href = event.target.result;
-                // document.getElementById("download").download = 'image.' + ss[ss.length - 1];
             };
             reader.readAsDataURL(blob);
             img.style.display = 'block'
