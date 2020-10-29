@@ -32,17 +32,15 @@ You must have on your Mac
 
 ---
 
-<img src="https://drive.google.com/file/d/1eJdwofqaom9bFWiSZIB7OsCQjGGos-z_/view?usp=sharing" alt="screen">
-<br>
-<img src="https://drive.google.com/file/d/1lv6Tft5fMLh4McFbC1CXia3o3jSWljnR/view?usp=sharing" alt="screen">
-<br>
+![](assets/image/screen1.png)
 
-![](https://drive.google.com/file/d/1WgAdlj6eH-cpMKZh8tSLDCUqGzYtvb-Z/view?usp=sharing)
+![](assets/image/screen4.png)
 
-![](https://drive.google.com/file/d/1x1_1CnWmrzjded-QFHmLlShKi0fQ62lk/view?usp=sharing)
+![](assets/image/screen6.png)
 
-![](https://drive.google.com/file/d/1Vbmbz3XnPjt4DllkWaCBKLDciCec-7by/view?usp=sharing)
+![](assets/image/screen2.png)
 
-![](https://drive.google.com/file/d/1yy9dBVWh32DgYTfFVAGAPfQT5nR7mxKK/view?usp=sharing)
+![](assets/image/screen3.png)
+
 
 
