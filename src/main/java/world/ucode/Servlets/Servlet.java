@@ -48,14 +48,14 @@ public class Servlet extends HttpServlet {
                 break;
             }
             default:
-                throw new IllegalStateException("Unexpected value: " + req.getServletPath());
+                is = null;
+                System.out.println("unexpected value !");
+
         }
-        if (is == null) {
-            System.out.println("error !");
-            return;
-        }
-        while ((readBuf = is.read(buffer)) != -1 ) {
-            os.write(buffer, 0, readBuf);
+        if (is != null) {
+            while ((readBuf = is.read(buffer)) != -1 ) {
+                os.write(buffer, 0, readBuf);
+            }
         }
     }
 }

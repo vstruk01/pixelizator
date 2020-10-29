@@ -11,8 +11,8 @@
     <body>
         <div id="master">Pixelizator</div>
         <div class="contentImg">
-            <img class="im" id="forInput" src="#">
-            <img class="im" id="forOutput" src="#">
+            <img class="im" id="forInput" src="#" alt="imageInput">
+            <img class="im" id="forOutput" src="" alt="imageOutput">
         </div>
         <script src="script.js"></script>
         <div id="buttons">
@@ -22,13 +22,25 @@
             <input type="range" class="choiceNumber" id="inputNumber" min="1" max="100"  value="10">
             <button class="underButton" id="pixelizate"> pixelizate</button>
         </div>
-        <p class="info" id="name"></p>
-        <p class="info" id="format"></p>
-        <p class="info" id="size"></p>
-        <a href="#" id="download1" download="image.png">png</a>
-        <a href="#" id="download2" download="image.jpeg">jpeg</a>
-        <a href="#" id="download3" download="image.webp">webp</a>
-
+        <div id="foot">
+            <div id="infoBlock">
+                <p class="info" id="name"></p>
+                <p class="info" id="format"></p>
+                <p class="info" id="size"></p>
+            </div>
+            <div>
+                <label for="rectangle">rectangle</label>
+                <input type="radio" name="shape" id="rectangle" checked>
+                <label for="Triangle">triangle</label>
+                <input type="radio" name="shape" id="Triangle">
+            </div>
+            <div id="downloads">
+                <p>Download</p>
+                <button id="download1" >png</button>
+                <button id="download2" >jpeg</button>
+                <button id="download3" >webp</button>
+            </div>
+        </div>
         <script src="scriptButton.js"></script>
     </body>
 </html>

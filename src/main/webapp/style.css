@@ -73,3 +73,8 @@
     padding-top: 1.5vh;
     padding-left: 10%;
 }
+
+#foot {
+    display: grid;
+    grid-template-columns: 32% 36% 32%;
+}
