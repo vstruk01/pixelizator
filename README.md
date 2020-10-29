@@ -22,7 +22,7 @@ You must have on your Mac
 >
 > ./mvnw install
 
-### RUN
+### Run
 
 ---
 
@@ -32,9 +32,10 @@ You must have on your Mac
 
 ---
 
-![](https://drive.google.com/file/d/1eJdwofqaom9bFWiSZIB7OsCQjGGos-z_/view?usp=sharing)
-
-![](https://drive.google.com/file/d/1lv6Tft5fMLh4McFbC1CXia3o3jSWljnR/view?usp=sharing)
+<img src="https://drive.google.com/file/d/1eJdwofqaom9bFWiSZIB7OsCQjGGos-z_/view?usp=sharing" alt="screen">
+<br>
+<img src="https://drive.google.com/file/d/1lv6Tft5fMLh4McFbC1CXia3o3jSWljnR/view?usp=sharing" alt="screen">
+<br>
 
 ![](https://drive.google.com/file/d/1WgAdlj6eH-cpMKZh8tSLDCUqGzYtvb-Z/view?usp=sharing)
 
