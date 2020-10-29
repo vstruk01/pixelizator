@@ -2,7 +2,13 @@
 
 Project of learning in Ucode IT Academy
 
-### Tehnologi
+### Technologies
+
+* java 15
+* maven 
+* servlets
+* JSP
+* CSS/JS
 
 ### Install
 
