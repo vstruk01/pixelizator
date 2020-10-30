@@ -16,9 +16,9 @@ function readURL(input) {
         document.getElementById("name").textContent = '';
         document.getElementById("size").textContent = '';
         document.getElementById("format").textContent = '';
-        document.getElementById("forOutput").src = '#';
+        document.getElementById("forOutput").src = '';
         document.getElementById("forOutput").style.display = 'none';
-        document.getElementById("forInput").src = '#';
+        document.getElementById("forInput").src = '';
         document.getElementById("forInput").style.display = 'none';
     }
 }
