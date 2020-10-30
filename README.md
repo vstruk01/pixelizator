@@ -16,9 +16,9 @@ Project of learning in Ucode IT Academy
 
 You must have on your Mac
 
-> git clone https://github.com/vstruk01/tamagotchi
+> git clone https://github.com/vstruk01/pixelizator
 >
-> cd tamagotchi
+> cd pixelizator
 >
 > ./mvnw install
 
